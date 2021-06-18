@@ -1,0 +1,27 @@
+# mount point       fstype    device                                                                flags
+/system             ext4      system                                                                flags=display="System";backup=1;logical;
+/system_image       emmc      system                                                                flags=display="System image";backup=1;flashimg=1;logical;
+/vendor             ext4      vendor                                                                flags=display="Vendor";backup=1;logical;
+/vendor_image       emmc      vendor                                                                flags=display="Vendor image";backup=1;flashimg=1;logical;
+/boot               emmc      /dev/block/bootdevice/by-name/boot                                    flags=display="Boot";backup=1;flashimg=1;
+/recovery           emmc      /dev/block/bootdevice/by-name/recovery                                flags=display="Recovery";backup=1;flashimg=1;
+/metadata           ext4      /dev/block/bootdevice/by-name/metadata                                flags=display="Metadata";
+/data               f2fs      /dev/block/bootdevice/by-name/userdata                                flags=display="Data";
+/cache              ext4      /dev/block/bootdevice/by-name/cache                                   flags=display="Cache";
+/sdcard1            sdfat     /dev/block/mmcblk0p1                                                  flags=display="Sdcard1";
+/efs                ext4      /dev/block/bootdevice/by-name/sec_efs                                 flags=display="Efs";
+/sec_efs            ext4      /dev/block/bootdevice/by-name/sec_efs                                 flags=display="Sec_efs";
+/modem              emmc      /dev/block/bootdevice/by-name/apnhlos                                 flags=display="Modem";
+/mdm                emmc      /dev/block/bootdevice/by-name/modem                                   flags=display="Mdm";
+/dsp                emmc      /dev/block/bootdevice/by-name/dsp                                     flags=display="Dsp";
+/product            ext4      product                                                               flags=display="Product";backup=1;logical;
+/product_image      emmc      product                                                               flags=display="Product image";backup=1;flashimg=1;logical;
+/misc               emmc      /dev/block/bootdevice/by-name/misc                                    flags=display="Misc";backup=1;flashimg=1;
+/keydata            ext4      /dev/block/bootdevice/by-name/keydata                                 flags=display="Keydata";
+/keyrefuge          ext4      /dev/block/bootdevice/by-name/keyrefuge                               flags=display="Keyrefuge";
+/dtbo               emmc      /dev/block/bootdevice/by-name/dtbo                                    flags=display="Dtbo";backup=1;flashimg=1;
+/prism              ext4      /dev/block/bootdevice/by-name/prism                                   flags=display="Prism";
+/optics             ext4      /dev/block/bootdevice/by-name/optics                                  flags=display="Optics";
+/odm                ext4      odm                                                                   flags=display="Odm";backup=1;logical;
+/odm_image          emmc      odm                                                                   flags=display="Odm image";backup=1;flashimg=1;logical;
+/vbmeta_samsung     emmc      /dev/block/bootdevice/by-name/vbmeta_samsung                          flags=display="Vbmeta_samsung";
