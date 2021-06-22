@@ -41,6 +41,21 @@ TARGET_OTA_ASSERT_DEVICE := gta4lwifi
 
 # Bootloader"
 TARGET_BOOTLOADER_BOARD_NAME := SRPTD23A003
+##
+BOARD_VENDOR := samsung
+TARGET_SOC := bengal
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+TARGET_USES_UEFI := true
+##
+
+##
+# Dynamic Partitions
+BOARD_SUPER_PARTITION_SIZE := 5729419264
+BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 5725224960
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm
+##
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -53,7 +68,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x4a90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 loop.max_part=7 firmware_class.path=/vendor/firmware_mnt/image
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x4a90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 loop.max_part=7 firmware_class.path=/vendor/firmware_mnt/image androidboot.selinux=permissive
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
@@ -77,9 +92,15 @@ TARGET_KERNEL_CONFIG := gta4lwifi_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := bengal
+##
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
+QCOM_BOARD_PLATFORMS += bengal
+##
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+#TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -92,5 +113,22 @@ TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-TWRP_EVENT_LOGGING := true
-BOARD_HAS_FLIPPED_SCREEN := true
+
+##
+#RECOVERY_TOUCHSCREEN_SWAP_XY := true
+#RECOVERY_TOUCHSCREEN_FLIP_Y := true
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_MAX_BRIGHTNESS := 355
+TW_DEFAULT_BRIGHTNESS := 200
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_INCLUDE_NTFS_3G := true
+TW_USE_NEW_MINADBD := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TARGET_USES_MKE2FS := true
+TW_NO_LEGACY_PROPS := true
+TW_NO_BIND_SYSTEM := true
+##
