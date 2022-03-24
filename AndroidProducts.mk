@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_gta4lwifi.mk
+    $(LOCAL_DIR)/twrp_gta4lwifi.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_gta4lwifi-user \
-    omni_gta4lwifi-userdebug \
-    omni_gta4lwifi-eng
+    twrp_gta4lwifi-user \
+    twrp_gta4lwifi-userdebug \
+    twrp_gta4lwifi-eng

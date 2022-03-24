@@ -1,0 +1,2 @@
+#!/sbin/sh
+dd if=/dev/zero of=/dev/block/by-name/misc
