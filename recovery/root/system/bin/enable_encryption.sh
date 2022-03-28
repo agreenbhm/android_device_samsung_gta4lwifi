@@ -1,0 +1,1 @@
+./encryption/enable_encryption.sh

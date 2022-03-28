@@ -1,0 +1,1 @@
+./encryption/disable_encryption.sh
